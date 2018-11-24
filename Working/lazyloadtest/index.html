@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+        
+</head>     
+<body>
+    <img data-src="img/1.jpg" class="lazyload" />
+    <img data-src="img/2.jpg" class="lazyload" />
+    <img data-src="img/3.jpg" class="lazyload" />
+    <img data-src="img/4.jpg" class="lazyload" />
+    <img data-src="img/5.jpg" class="lazyload" />
+    <img data-src="img/6.jpg" class="lazyload" />
+    <img data-src="img/7.jpg" class="lazyload" />
+    <img data-src="img/8.jpg" class="lazyload" />
+    <img data-src="img/9.jpg" class="lazyload" />
+    <img data-src="img/10.jpg" class="lazyload" />
+    <button>Hello World</button>
+    <button>Hello World</button>
+    <button>Hello World</button>
+    <button>Hello World</button>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script> -->
+    <script src="js/lazysizes.min.js" async=""></script>
+    <script type="text/javascript">
+        var b = document.querySelectorAll("img");
+        for (let i = 0; i < b.length; i++) {
+            
+            b[i].setAttribute("src", "1.jpg");
+            
+        }
+
+    </script>
+
+</body>
+</html>
