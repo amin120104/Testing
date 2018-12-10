@@ -5,14 +5,15 @@ class Books {
     var $price;
     var $title;
 
-    function __construct($value) {
-        $this->price = $value;
+    function __construct($value1, $value2) {
+        $this->price = $value1;
+        $this->title = $value2;
     }
 
     //pirce set    
-    function setPrice($value) {
-        $this->price = $value;
-    }
+    // function setPrice($value) {
+    //     $this->price = $value;
+    // }
 
     //price print
     function getPrice() {
@@ -20,9 +21,9 @@ class Books {
     }
 
     //Title set
-    function setTitle($value) {
-        $this->title = $value;
-    }
+    // function setTitle($value) {
+    //     $this->title = $value;
+    // }
 
     //Title print
     function getTitle(){
@@ -30,16 +31,38 @@ class Books {
     }
 }
 
-class Publiser extends Books {
-    var $publisername;
+// class Publiser extends Books {
+//     var $publisername;
 
-    //set publisername
-    function setPublisername($value) {
-        $this->publisername = $value;
+//     //set publisername
+//     function setPublisername($value) {
+//         $this->publisername = $value;
+//     }
+
+//     //get Publisername
+//     function getPublisername() {
+//         echo "Publisername:" . $this->publisername . "<br /><br />";
+//     }
+// }
+
+
+//extra class
+class Extra {
+    protected $name = "amin mithun " . __CLASS__ . __LINE__ . __DIR__;
+    
+}
+
+class Statictest {
+
+    public static $mynumber = 10;
+
+    public $txt = "new txt";
+
+    public static function staticFnc(){
+        return self::$mynumber;
     }
 
-    //get Publisername
-    function getPublisername() {
-        echo "Publisername:" . $this->publisername . "<br /><br />";
+    public function newTxt(){
+        return $this->txt;
     }
 }
