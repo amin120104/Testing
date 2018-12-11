@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 
 
 app.get('/api/courses/:year/:month', (req, res) => {
-    //req.query => use for search
+    //req.query => use for search 
     res.send(req.params);
 });
 
@@ -67,6 +67,7 @@ app.put('/api/courses/:id', (req, res) => {
     //if not exiting, return 404
     if(!course) {
         res.status(404).send("not found");
+        return;
     }
 
 
