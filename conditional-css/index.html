@@ -1,0 +1,69 @@
+<!-- I found this solution here
+http://timjames.me/jquery-and-jquery-ui-fallbacks/
+-->
+
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Place favicon.ico in the root directory -->
+  <link rel="shortcut icon" type="image/ico" href="favicon.ico"/>
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
+  <script>
+    
+    var x = document.getElementsByClassName("owl-carousel");
+    var links = document.getElementsByTagName('link');
+    console.log(links);
+  </script>
+
+
+<link href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.17/themes/cupertino/jquery-ui.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+    <div class="ui-helper-hidden"></div>
+  <!-- Add your site or application content here -->
+  <p class="button">Hello world! This is HTML5 Boilerplate.</p>
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jqury-3.3.1.min.js"><\/script>')</script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+  <script>$.prototype.owlCarousel || document.write('<script src="js/main.js"><\/script>')</script>
+  
+  <script src="js/plugins.js"></script>
+
+
+
+  <script>
+      // jQuery UI CSS Fallback
+      $(function () {
+          if ($('.ui-helper-hidden:first').is(':visible') === true) {
+              $('<link rel="stylesheet" type="text/css" href="css/style.css" />').appendTo('head');
+          }
+      });
+  </script>
+
+
+  <!-- <script src="js/main.js"></script> -->
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+</body>
+
+</html>
