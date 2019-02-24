@@ -1,6 +1,15 @@
-$color: red;
+$color: green;
+
+$mdc-theme-primary: #fcb8ab;
+$mdc-theme-background: green;
+$mdc-theme-secondary: #feeae6;
+$mdc-theme-on-primary: #442b2d;
+$mdc-theme-on-secondary: #442b2d;
 
 .App-link {
     color: $color;
   }
+body {
+  background: $mdc-theme-background;
+}
   

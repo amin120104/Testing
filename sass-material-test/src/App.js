@@ -20,7 +20,7 @@ class App extends Component {
           >
             Learn React
           </a>
-          <button className="mdc-button">Button</button>
+          <button className="mdc-button mdc-button--outlined">Button</button>
         </header>
       </div>
     );
