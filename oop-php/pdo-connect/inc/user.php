@@ -11,15 +11,15 @@ class User extends Dbconnect {
     }
 
     public function getUsersWithCountCheck() {
-        $id = 1;
-        $name = "uttom";
+        // $id = 1;
+        // $name = "uttom";
 
-        $stmt = $this->connect()->prepare("SELECT * FROM users WHERE id=? AND name=?");
-        $stmt->execute([$id, $name]);
-
+        $stmt = $this->connect()->prepare("SELECT * FROM users");//extra add  WHERE id=? AND name=?
+        $stmt->execute();  //add on excute [$id, $name]
+  
         if ($stmt->rowCount()) {
-            while ($row = $stmt->fetch()) {
-                return $row['name'];
+            while ($row = $stmt->fetchAll()) {
+                return $row;
             }
         }
     }

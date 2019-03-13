@@ -18,6 +18,9 @@
         $object = new User;
         $getvalue = $object->getUsersWithCountCheck();
         var_dump($getvalue);
+        foreach ($getvalue as $result) {
+            echo "<br />" .$result['name'] . "<br/>";
+        }
     ?>
 </body>
 </html>
