@@ -12,25 +12,27 @@ const todoschema = new mongoose.Schema({
     isPublished: Boolean
 });
 
-//todos model
+//todos model===This is Most important (always need it for get, put , delete, update)
 const TodoModel = mongoose.model('TodoModel', todoschema);
 
 //data insert
-async function createTodo() {
+async function createTodo(fisrt, second) {
     const todo = new TodoModel({
-        todo: 'Learn Node.js',
-        isPublished: true
+        todo: fisrt,
+        isPublished: second
     });
     
     const result = await todo.save();
-    console.log(result);
+    // console.log(result);
 }
 // createTodo();
 
-async function getTodos() {
-    const todos = await TodoModel.find();
-    return todos;
-}
-getTodos();
+// async function getTodos() {
+//     const todos = await TodoModel.find();
+//     return todos;
+// }
+// getTodos();
 
 exports.TodoModel = TodoModel;
+
+exports.createTodo = createTodo;
