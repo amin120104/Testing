@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WebSocket Test</title>
+</head>
+<body>
+
+    <h1>Socket test</h1>
+    <button>Send hello</button>
+
+
+    <script>
+        var ws = new WebSocket("ws://localhost:5001");
+        
+        ws.onopen = function(event) {
+            console.log('socket connection successfully');
+
+            //server will get this value using on.message event 
+            ws.send("hey there");
+        }
+        ws.onmessage = function(event) {
+            console.log(event);
+        }
+
+        document.querySelector('button').onclick = function() {
+            ws.send("hello");
+        }
+    </script>
+
+</body>
+</html>

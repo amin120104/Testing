@@ -15,8 +15,7 @@ app.get('/', async (req, res) => {
 //post todo and save it on database using model and method
 app.post('/addtodo', (req, res) => {
     createTodo(req.body.todo, true);
-    res.status(201).send("successfull");
-    
+    res.status(201).send("successfull"); 
 })
 
 app.listen(port, () => console.log(`App are Listening on ${port} ...`));
