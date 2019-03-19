@@ -62,10 +62,10 @@
             // sock.send("hey there");
             
             //when connection is made then value go to the server
-            sock.send(JSON.stringify({
-                type: "name",
-                data: name
-            }));
+            var username = JSON.stringify({ type: "name", data: name });
+            sock.send(username);
+            console.log(username);
+
         }
 
         var showmessage = document.getElementById('showmessage');

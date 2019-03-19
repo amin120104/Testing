@@ -6,6 +6,8 @@ var name;
 s.on('connection', function(ws) {
     ws.on('message', function(message) {
 
+        console.log(message);
+
         message = JSON.parse(message);
 
         if(message.type == "name") {
@@ -28,6 +30,7 @@ s.on('connection', function(ws) {
                 }));
 
             }
+            console.log(client);
         });
 
         // ws.send(`From server: ${message}`);
