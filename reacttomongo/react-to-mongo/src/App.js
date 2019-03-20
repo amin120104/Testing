@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import axios from 'axios';
+
 import './App.css';
 
 class App extends Component {
@@ -10,11 +11,33 @@ class App extends Component {
     pcat: ''
   }
 
+  componentDidMount() {
+    axios.get('http://localhost:5000')
+      .then(res => {
+        console.log(res.data);
+      })
+      .catch(error => {
+        console.log(error);
+      })
+  }
+
   submit = (e) => {
     e.preventDefault();
     console.log(this.state.pname);
     console.log(this.state.pprice);
     console.log(this.state.pcat);
+
+    axios.post('http://localhost:5000/addproduct', {
+      name: this.state.pname,
+      price: this.state.pprice,
+      category: this.state.pcat
+    })
+    .then(res => {
+      console.log(res);
+    })
+    .catch(error => {
+      console.log(error);
+    });
   }
 
   changeValue = (e) => {
@@ -30,6 +53,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
+          <h1>Add Product</h1>
           <form onSubmit={this.submit}>
             <input 
               type="text" 
